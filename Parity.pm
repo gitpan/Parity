@@ -1,11 +1,11 @@
-package Text::Parity;
+package String::Parity;
 require 5.001;
 require Exporter;
 
 # Documentation in pod format after __END__ token. See Perl
 # man pages to convert pod format to man, html and other formats.
 
-$Version = 1.1; sub Version {$Version}
+$Version = 1.2; sub Version {$Version}
 @ISA = qw(Exporter);
 @EXPORT = qw( setEvenParity setOddParity showParity
 	      EvenBytes OddBytes
@@ -88,12 +88,12 @@ __END__
 
 =head1 NAME
 
-Text::Parity, setEvenParity, setOddParity, showParity, EvenBytes,
-OddBytes, isEvenParity, isOddParity - parity handling
+String::Parity, setEvenParity, setOddParity, showParity, EvenBytes,
+OddBytes, isEvenParity, isOddParity - Parity (mark/space) handling functions
 
 =head1 SYNOPSIS
 
-    use Text::Parity;
+    use String::Parity;
 
 =head1 DESCRIPTION
 
@@ -133,6 +133,12 @@ Returns TRUE if the LIST contains no byte with odd parity, FALSE otherwise.
 Returns TRUE if the LIST contains no byte with even parity, FALSE otherwise.
 
 =back
+
+=head1 NOTES
+
+Don't use this module unless you have to communicate with some old device
+or protocol. Help the world and make your application 8 bit clean. Use the
+internationally standardized ISO-8859-1 character set.
 
 =head1 AUTHOR
 
